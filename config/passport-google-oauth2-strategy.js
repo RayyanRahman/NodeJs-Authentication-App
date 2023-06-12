@@ -5,10 +5,10 @@ const crypto = require('crypto');
 require('dotenv').config();
 //USING PASSPORT GOOGLE OAUTH-2.0
 passport.use(new GoogleStrategy({
-    clientID: "860525280581-hlnfr13h2gpfq6vosm5hs845c1ah37eo.apps.googleusercontent.com",
-    clientSecret:"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",
-    callbackURL: "http://localhost:8000/auth/google/callback",
-    passReqToCallback : true 
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: process.env.GOOGLE_CALLBACK_URL,
+    passReqToCallback : true  
   },
   function(req, accessToken, refreshToken, profile, done){
     // return done(null, profile);
